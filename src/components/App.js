@@ -40,21 +40,25 @@ function App() {
 
   useEffect(() => {
     if (loggedIn === true) {
-    api.getUserInfo()
-    .then(data => {
-      setCurrentUser(data)
-    })
-    .catch(e => console.log(e))}
-  }, [loggedIn])
+      api
+        .getUserInfo()
+        .then((data) => {
+          setCurrentUser(data);
+        })
+        .catch((e) => console.log(e));
+    }
+  }, [loggedIn]);
 
   useEffect(() => {
     if (loggedIn === true) {
-    api.getInitialCards()
-    .then(data => {
-      setCards(data)
-    })
-    .catch(err => console.log(err))}
-  }, [loggedIn])
+      api
+        .getInitialCards()
+        .then((data) => {
+          setCards(data);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [loggedIn]);
 
   function handleCardLike(card) {
     const isLiked = card.likes.some((i) => i._id === currentUser._id);

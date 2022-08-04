@@ -13,10 +13,10 @@ function Header(props) {
     <header className="header">
       <img src={logo} alt="логотип" className="header__logo" />
       <div className="header__menu">
-        {location.pathname === '/sign-in' && <Link className="header__link" to="/sign-up">{linkName[props.path]}</Link> }
-        {location.pathname === '/sign-up' && <Link className="header__link" to="/sign-in">{linkName[props.path]}</Link> }
+        {location.pathname === '/sign-in' && <Link className="header__link" to="/sign-up">{linkName[location.pathname]}</Link> }
+        {location.pathname === '/sign-up' && <Link className="header__link" to="/sign-in">{linkName[location.pathname]}</Link> }
         {location.pathname === '/' && <p className="header__link header__link_type_email">{props.userEmail}</p> }
-        {location.pathname === '/' && <Link onClick={handleLogout} to="" className="header__link header__link_type_exit">{linkName[props.path]}</Link> }
+        {location.pathname === '/' && <Link onClick={handleLogout} to="" className="header__link header__link_type_exit">{linkName[location.pathname]}</Link> }
       </div>     
     </header>
   );
